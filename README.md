@@ -1,21 +1,22 @@
 # React Tic Tac Toe
 
-  This project looks to recreate the traditional game of Tic Tac Toe.
+  This project implements the traditional game of [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe). The live version can be seen [here](https://ricardoagra.github.io/react-tic-tac-toe/).
 
 
 ## Component Tree
 
   The component tree structure can be seen in the following diagram:
-  ![alt text](/screenshots/component-tree.png)
+  
+  ![alt text](screenshots/component-tree.png)
 
   Where the sharp edge elements are statefull and the round edge elements are stateless.
 
 ## State
 
-  Redux was used in order to facilitate state management. The state is composed of the following fields:
+  State management was implemented with Redux. The state is composed of the following fields:
 
   * **matchId**: A string of 20 characters used to identify the match.
-  * **boardState**: An array of single characters representing the board state for each position. The 9 positions are numbered from 0 to 8.
+  * **boardState**: A string array representing the board state for each position. The 9 positions are numbered from 0 to 8.
   * **lastMove**: An object containing "position": the last human move, and "char": the char that represents a human move.
   * **nextAction**: A string that indicates what is the next expected input. It can be "humanSelect" when it waits for the user to select his/her marker, "human" when it expects a human move or "computer" while the AI is thinking. 
   * **moveHistory**: An array of integers that stores both computer and human moves. Example: [0, 4, 3, 2].
@@ -56,12 +57,10 @@
 
   The best way to attack is to go for a winning shape. A winning shape is a combination of moves that allow for two or more possible ways to win, which guarantees a victory.
 
-  Though there are five winning shapes, only two allow for three possible ways to win. This is useful since we can use the need to block one to secure the victory.
-
-  Those shapes are:
+  Examples are:
   
   ![winning shape 1](/screenshots/winning-shape-1.png)
-  ![winning shape 1](/screenshots/winning-shape-2.png)
+  ![winning shape 2](/screenshots/winning-shape-2.png)
 
 
   ### Move 1 - First to move
@@ -70,7 +69,7 @@
 
   Playing on any the corners at the start of the game is the best offensive move. It gives your opponent only 2 out of 8 possible moves that won't result in a loss. In the image below, the 4 colors represent the 4 different responses to a move in the corner.
 
-  **Note:** For simplicity's sake, the computer always chooses the corner move #0.
+  **Note:** The computer always chooses the corner move #0 for simplicity.
 
   ![first move responses](/screenshots/move-one.png)
 
@@ -98,10 +97,10 @@
   ### Move 3
 
   Since we know the computer played at 0, we only need to check the opponent's move and respond accordingly.
-  Based on the strategy explained in move 1, the only two possibilities not yet explored are a center move or a move in the opposite corner. The response to each move is to make the other: [ X#0 - O#4 - X#8], or [X#0 - O#8 - X#4]. The goal here is to still have 2 chances of making a winning shape, in the case our opponent plays in any of the red squares, by making the forced blocking move.
+  Based on the strategy explained in move 1, the only two possibilities not yet explored are a center move or a move in the opposite corner. The response to each move is to make the other: [ X#0 - O#4 - X#8], or [X#0 - O#8 - X#4]. The goal is to maximize the chances of making a winning shape, in the case our opponent plays in any of the red squares.
 
-   ![first move responses](/screenshots/move-3-center.png)
-   ![first move responses](/screenshots/move-3-corner.png)
+   ![first move responses](screenshots/move-3-center.png)
+   ![first move responses](screenshots/move-3-corner.png)
 
 
   ### Move 4+
@@ -111,7 +110,7 @@
   * **Can I win?** : check if any computer move results in a victory.
   * **Can my opponent win?** : check if any next human move results in a victory.
   * **Can I make a winning shape?** : check if any move allows for at least two possible winning moves.
-  * **Can I make an attack move that doens't allow a winning shape for my opponent?** : check if a move allows for a winning move without any opponent's response giving him two possible winning moves in return.
+  * **Can I make an attack move that doesn't allow a winning shape for my opponent?** : check if a move allows a victory next turn without the opponent's response giving him two possibilities to win.
   * **Square priority**: Play in the center. If not possible, play on a corner. Finally, play on a border square.
 
 
