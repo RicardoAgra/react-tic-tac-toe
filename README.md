@@ -6,7 +6,7 @@
 ## Component Tree
 
   The component tree structure can be seen in the following diagram:
-  ![alt text](/public/screenshots/component-tree.png)
+  ![alt text](/screenshots/component-tree.png)
 
   Where the sharp edge elements are statefull and the round edge elements are stateless.
 
@@ -26,7 +26,7 @@
 
   The state is passed down according to the following diagram:
 
-  ![alt text](/public/screenshots/state-tree.png)
+  ![alt text](/screenshots/state-tree.png)
 
   ### Component Rendering and Update
 
@@ -50,7 +50,7 @@
 
   **Note:** In order to better understand the examples below, the squares will be referenced with a number from 0 to 8 and a type between "center", "corner" or "border" square, according to the diagram bellow:
 
-  ![board explanation](/public/screenshots/board.png)
+  ![board explanation](/screenshots/board.png)
 
   In any turn based game, the first move has always the advantage. Even more so in Tic Tac Toe since the total number of moves is very limited. Therefor, the strategy is to attack when going first and defend when going second.
 
@@ -60,8 +60,8 @@
 
   Those shapes are:
   
-  ![winning shape 1](/public/screenshots/winning-shape-1.png)
-  ![winning shape 1](/public/screenshots/winning-shape-2.png)
+  ![winning shape 1](/screenshots/winning-shape-1.png)
+  ![winning shape 1](/screenshots/winning-shape-2.png)
 
 
   ### Move 1 - First to move
@@ -72,24 +72,24 @@
 
   **Note:** For simplicity's sake, the computer always chooses the corner move #0.
 
-  ![first move responses](/public/screenshots/move-one.png)
+  ![first move responses](/screenshots/move-one.png)
 
   The moves in red, orange and purple are losing moves. The moves in green are safe.
 
   Red loses as follows: [X#0 - O#1/#3 - X#4 - O#8 (forced move) - X#6/#2 (winning shape)]
 
-  ![first move responses](/public/screenshots/move-red.png)
-  ![first move responses](/public/screenshots/move-red-2.png)
+  ![first move responses](/screenshots/move-red.png)
+  ![first move responses](/screenshots/move-red-2.png)
 
   Orange loses as follows: [X#0 - O#2/#6 - X#8 - O#4 (forced move) - X#2/#6 (winning shape)]
 
-  ![first move responses](/public/screenshots/move-orange.png)
-  ![first move responses](/public/screenshots/move-orange-2.png)
+  ![first move responses](/screenshots/move-orange.png)
+  ![first move responses](/screenshots/move-orange-2.png)
 
   Purple loses as follows: [X#0 - O#5/#7 - X#2/#6 - O#1/#3 (forced move) - X#4 (winning shape)]
 
-  ![first move responses](/public/screenshots/move-purple.png)
-  ![first move responses](/public/screenshots/move-purple-2.png)
+  ![first move responses](/screenshots/move-purple.png)
+  ![first move responses](/screenshots/move-purple-2.png)
 
   ### Move 2
 
@@ -100,8 +100,8 @@
   Since we know the computer played at 0, we only need to check the opponent's move and respond accordingly.
   Based on the strategy explained in move 1, the only two possibilities not yet explored are a center move or a move in the opposite corner. The response to each move is to make the other: [ X#0 - O#4 - X#8], or [X#0 - O#8 - X#4]. The goal here is to still have 2 chances of making a winning shape, in the case our opponent plays in any of the red squares, by making the forced blocking move.
 
-   ![first move responses](/public/screenshots/move-3-center.png)
-   ![first move responses](/public/screenshots/move-3-corner.png)
+   ![first move responses](/screenshots/move-3-center.png)
+   ![first move responses](/screenshots/move-3-corner.png)
 
 
   ### Move 4+
