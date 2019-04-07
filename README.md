@@ -7,7 +7,7 @@
 
   The component tree structure can be seen in the following diagram:
   
-  ![alt text](public/public/screenshots/component-tree.png)
+  ![alt text](public/screenshots/component-tree.png)
 
   Where the sharp edge elements are statefull and the round edge elements are stateless.
 
