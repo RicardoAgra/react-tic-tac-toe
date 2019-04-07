@@ -27,7 +27,7 @@
 
   The state is passed down according to the following diagram:
 
-  ![alt text](/screenshots/state-tree.png)
+  ![alt text](screenshots/state-tree.png)
 
   ### Component Rendering and Update
 
@@ -51,7 +51,7 @@
 
   **Note:** In order to better understand the examples below, the squares will be referenced with a number from 0 to 8 and a type between "center", "corner" or "border" square, according to the diagram bellow:
 
-  ![board explanation](/screenshots/board.png)
+  ![board explanation](screenshots/board.png)
 
   In any turn based game, the first move has always the advantage. Even more so in Tic Tac Toe since the total number of moves is very limited. Therefor, the strategy is to attack when going first and defend when going second.
 
@@ -59,8 +59,8 @@
 
   Examples are:
   
-  ![winning shape 1](/screenshots/winning-shape-1.png)
-  ![winning shape 2](/screenshots/winning-shape-2.png)
+  ![winning shape 1](screenshots/winning-shape-1.png)
+  ![winning shape 2](screenshots/winning-shape-2.png)
 
 
   ### Move 1 - First to move
@@ -71,24 +71,24 @@
 
   **Note:** The computer always chooses the corner move #0 for simplicity.
 
-  ![first move responses](/screenshots/move-one.png)
+  ![first move responses](screenshots/move-one.png)
 
-  The moves in red, orange and purple are losing moves. The moves in green are safe.
+  The squares in red, orange and purple are losing moves. The green squares are safe.
 
   Red loses as follows: [X#0 - O#1/#3 - X#4 - O#8 (forced move) - X#6/#2 (winning shape)]
 
-  ![first move responses](/screenshots/move-red.png)
-  ![first move responses](/screenshots/move-red-2.png)
+  ![first move responses](screenshots/move-red.png)
+  ![first move responses](screenshots/move-red-2.png)
 
   Orange loses as follows: [X#0 - O#2/#6 - X#8 - O#4 (forced move) - X#2/#6 (winning shape)]
 
-  ![first move responses](/screenshots/move-orange.png)
-  ![first move responses](/screenshots/move-orange-2.png)
+  ![first move responses](screenshots/move-orange.png)
+  ![first move responses](screenshots/move-orange-2.png)
 
   Purple loses as follows: [X#0 - O#5/#7 - X#2/#6 - O#1/#3 (forced move) - X#4 (winning shape)]
 
-  ![first move responses](/screenshots/move-purple.png)
-  ![first move responses](/screenshots/move-purple-2.png)
+  ![first move responses](screenshots/move-purple.png)
+  ![first move responses](screenshots/move-purple-2.png)
 
   ### Move 2
 
