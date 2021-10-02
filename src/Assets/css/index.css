@@ -1,0 +1,64 @@
+:root {
+  --primary: #03CC90;
+  --light: #A0BEE6;
+  --medium: #353849;
+  --dark: #232734;
+
+  --text-color: white;
+  --heading-color: var( --primary );
+
+  --font: "Maven Pro",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var( --text-color );
+  font-family: var( --font );
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  color: white;
+}
+
+h1:hover {
+	color: var(--primary)
+}
+
+button { 
+  outline: none; color: var( --text-color );
+  font-family: var( --font );
+}
+
+button:hover {
+	transition: all .1s ease-out;
+	box-shadow: 0px 0px 2px 2px var(--primary);
+}
+
+ul, li {
+  list-style: none;
+}
+
+a, a:hover, a:focus, a:active, a:visited { 
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-center {
+	justify-content: center;
+}
+
+.items-center {
+	align-items: center;
+}
